@@ -1,5 +1,8 @@
 <template>
-    <h1>{{ title }}</h1>
+    <h1>{{ title }}</h1> <br>
+    <input type="text" ref="name">
+    <button @click="handleClick">Click Me</button>
+    <!--The template ref here was used to grip an element just like the query selector-->
 </template>
 
 <script>
@@ -8,6 +11,13 @@
         data(){
             return{
                 title: 'My First Vue App :)'
+            }
+        },
+        methods: {
+            handleClick(){
+                console.log(this.$refs.name),
+                this.$refs.name.focus()
+                //This is how to reference template refs in scripts
             }
         }
     }
