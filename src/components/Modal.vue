@@ -22,9 +22,14 @@
         width: 100%;
         height: 100%;
     }
-    h1{
+    .modal h1{
         color: #03cfb4;
         border: none;
         padding: 0;
+        /* Another way to prevent overiding the style in the parent component is t o be more specific about the style */
+    }
+    p{
+        font-style: normal;
+        /* Overiding a global style */
     }
 </style>
