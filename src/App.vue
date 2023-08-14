@@ -1,6 +1,7 @@
 <template>
     <h1>{{ title }}</h1> <br>
-    <Modal/>
+    <Modal header="Sign up for the Giveaway!" text="Grab your ninja swag for half price!"/>
+    <!--The "header" and "text" are the props-->
 </template>
 
 <script>

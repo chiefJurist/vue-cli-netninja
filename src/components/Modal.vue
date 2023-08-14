@@ -1,11 +1,17 @@
 <template>
     <div class="backdrop">
         <div class="modal">
-            <h1>Modal Title</h1>
-            <p>Modal Content</p>
+            <h1>{{ header }}</h1>
+            <p>{{ text }}</p>
         </div>
     </div>
 </template>
+
+<script>
+    export default{
+        props: ['header', 'text']
+    }
+</script>
 
 <style scoped>
     .modal{
@@ -26,10 +32,8 @@
         color: #03cfb4;
         border: none;
         padding: 0;
-        /* Another way to prevent overiding the style in the parent component is t o be more specific about the style */
     }
     p{
         font-style: normal;
-        /* Overiding a global style */
     }
 </style>
