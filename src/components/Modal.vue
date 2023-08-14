@@ -1,12 +1,13 @@
 <template>
     <div class="backdrop">
         <div class="modal">
+            <h1>Modal Title</h1>
             <p>Modal Content</p>
         </div>
     </div>
 </template>
 
-<style>
+<style scoped>
     .modal{
         width: 400px;
         padding: 20px;
@@ -21,4 +22,11 @@
         width: 100%;
         height: 100%;
     }
+    h1{
+        color: #03cfb4;
+        border: none;
+        padding: 0;
+    }
+    /**The "scoped" makesthe style in this component to only apply in this component's template and
+       not overide the style in the parent component*/
 </style>
