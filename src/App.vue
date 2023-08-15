@@ -4,8 +4,8 @@
     <div v-if="showModal">
         <Modal theme="sale" @close="toggleModal">
             <template v-slot:links>
-                <a href="">Sign up now!</a>
-                <a href="">more info</a>
+                <a href="#">Sign up now!</a>
+                <a href="#">more info</a>
             </template>
             <h1>Sign up for the Giveaway!</h1>
             <p>Grab your ninja swag for half price!</p>
