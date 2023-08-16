@@ -11,24 +11,38 @@
             <p>Grab your ninja swag for half price!</p>
         </Modal>
     </div>
-    <button @click.alt="toggleModal">open modal (alt)</button>
+    <button @click.alt="toggleModal">open modal (alt)</button><br><br>
+
+    <div v-if="showDeclaration">
+        <Declaration @passive="toggleDeclaration">
+            <h1>Declaration!</h1>
+            <p>I know I am going to be successful</p>
+        </Declaration>
+    </div>
+    <button @click="toggleDeclaration">open declaration</button>
 </template>
 
 <script>
     import Modal from "./components/Modal.vue"
+    import Declaration from "./components/Declaration.vue"
 
     export default {
         name: 'App',
-        components: { Modal },
+        components: { Modal, Declaration },
         data(){
             return{
                 title: 'My First Vue App :)',
-                showModal: false
+                showModal: false,
+                showDeclaration: false,
+                showTheme: false
             }
         },
         methods:{
             toggleModal(){
                 this.showModal = !this.showModal
+            },
+            toggleDeclaration(){
+                this.showDeclaration = !this.showDeclaration
             }
         }
     }
