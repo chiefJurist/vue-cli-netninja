@@ -1,16 +1,24 @@
 <template>
     <div class="backdrop" @click.self="closeDeclaration">
-        <div class="modal">
+        <div class="modal" :class="{sale: theme}" @click.right="toggleTheme">
             <slot>Default content</slot>
         </div>
     </div>
 </template>
 
 <script>
-    export default{
+    export default {
+        data(){
+            return{
+                theme: true
+            }
+        },
         methods: {
             closeDeclaration(){
                 this.$emit('passive')
+            },
+            toggleTheme() {
+                this.theme = !this.theme
             }
         }
     }

@@ -34,7 +34,6 @@
                 title: 'My First Vue App :)',
                 showModal: false,
                 showDeclaration: false,
-                showTheme: false
             }
         },
         methods:{
