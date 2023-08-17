@@ -1,8 +1,10 @@
 <template>
     <h1>{{ title }}</h1> <br>
     <p>Welcome...</p>
-    <div v-if="showModal">
-        <Modal theme="sale" @close="toggleModal">
+    <teleport to=".modals" v-if="showModal">
+        <!--Here we are using the teleport component to teleport to the place with the class of 'modals'-->
+        <!--You can also use ids and not only classes-->
+        <Modal @close="toggleModal">
             <template v-slot:links>
                 <a href="#">Sign up now!</a>
                 <a href="#">more info</a>
@@ -10,45 +12,34 @@
             <h1>Sign up for the Giveaway!</h1>
             <p>Grab your ninja swag for half price!</p>
         </Modal>
-    </div>
+    </teleport>
     <button @click.alt="toggleModal">open modal (alt)</button><br><br>
-
-    <div v-if="showDeclaration">
-        <Declaration @passive="toggleDeclaration">
-            <h1>Declaration!</h1>
-            <p>I know I am going to be successful</p>
-        </Declaration>
-    </div>
-    <button @click="toggleDeclaration">open declaration</button>
 </template>
 
 <script>
     import Modal from "./components/Modal.vue"
-    import Declaration from "./components/Declaration.vue"
 
     export default {
         name: 'App',
-        components: { Modal, Declaration },
+        components: { Modal },
         data(){
             return{
                 title: 'My First Vue App :)',
                 showModal: false,
-                showDeclaration: false,
             }
         },
         methods:{
             toggleModal(){
                 this.showModal = !this.showModal
-            },
-            toggleDeclaration(){
-                this.showDeclaration = !this.showDeclaration
             }
         }
     }
 </script>
 
 <style>
-    #app {
+    #app, .modals {
+        /**We are adding the class modals. This way, the styles will also apply to components rendered in this div  */
+        /**Note that another way to fix this is by placing the styles in the global css */
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
