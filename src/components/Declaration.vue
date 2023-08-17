@@ -1,6 +1,6 @@
 <template>
     <div class="backdrop" @click.self="closeDeclaration">
-        <div class="modal" :class="{sale: theme}" @click.right="toggleTheme">
+        <div class="modal" :class="{sale: theme}" @click.shift="toggleTheme">
             <slot>Default content</slot>
         </div>
     </div>
